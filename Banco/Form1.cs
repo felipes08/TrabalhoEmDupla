@@ -19,7 +19,7 @@ namespace Banco
 
         private void buttonExecutar_Click(object sender, EventArgs e)
         {
-            //testando pelo terminal
+            //pull do terminal
         }
     }
 }
