@@ -29,8 +29,32 @@ namespace Banco
             else
             {
                 saldoAtual += valor;
+                descontoTarifa();
                 return true;
             }
+        }
+
+        public bool saque(double valor)
+        {
+            if(valor < 10)
+            {
+                return false;
+            }
+            else if(saldoAtual < valor)
+            {
+                return false;
+            }
+            else
+            {
+                saldoAtual -= valor;
+                descontoTarifa();
+                return true;
+            }
+        }
+        
+        void descontoTarifa()
+        {
+            saldoAtual -= 0.10;
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro.cs" />
     <Compile Include="CaixaBanco01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,10 +54,20 @@
       <DependentUpon>CaixaBanco01.cs</DependentUpon>
     </Compile>
     <Compile Include="ContaCorrente.cs" />
+    <Compile Include="Extrato02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extrato02.Designer.cs">
+      <DependentUpon>Extrato02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CaixaBanco01.resx">
       <DependentUpon>CaixaBanco01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extrato02.resx">
+      <DependentUpon>Extrato02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
