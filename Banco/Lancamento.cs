@@ -11,13 +11,23 @@ namespace Banco
         DateTime data;
         double valor;
         bool operacao;
-        Dictionary<DateTime, List<(bool, double)>> RegistroDeOperacao = new Dictionary<DateTime, List<(bool, double)>>();
+        List<(bool op, double val)> DictionaryValue = new List<(bool op, double val)>();
+        Dictionary<DateTime, List<(bool, double)>> DicionarioDaOperacao = new Dictionary<DateTime, List<(bool, double)>>();
 
         public Lancamento(DateTime data, double valor, bool operacao)
         {
             this.data = data;
             this.valor = valor;
             this.operacao = operacao;
+
+            //criando a lista
+            
+
+            //adicionando a operacao e o valor na lista
+            DictionaryValue.Add((operacao, valor));
+
+            //adicionando a data como chave e a lista como valor
+            DicionarioDaOperacao.Add(data, DictionaryValue);
         }
 
         public DateTime getdata()
@@ -35,10 +45,9 @@ namespace Banco
             return operacao;
         }
 
-        public Dictionary gerarRegistro()
+        public Dictionary<DateTime, List<(bool, double)>> getDicionarioDaOperacao()
         {
-            List<(valor, operacao)> DictionaryValue;
-            RegistroDeOperacao.Add(data, DictionaryValue)
+            return DicionarioDaOperacao;
         }
     }
 }

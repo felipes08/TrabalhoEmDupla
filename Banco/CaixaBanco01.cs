@@ -13,7 +13,7 @@ namespace Banco
     public partial class CaixaBanco01 : Form
     {
         ContaCorrente ContaBancaria = new ContaCorrente();
-        Lancamento lancamento;
+        Cadastro cadastro = new Cadastro();
         bool status;
         public CaixaBanco01()
         {
@@ -27,8 +27,14 @@ namespace Banco
             {
                 status = ContaBancaria.deposito(double.Parse(TextBox_Valor.Text));
                 textBox_Saldo.Text = ContaBancaria.getSaldoAtual().ToString();
-                Ca
+                Lancamento lancamento = new Lancamento(DateTime.Now, double.Parse(TextBox_Valor.Text), status);
+                cadastro.CadastrarLog(lancamento.getDicionarioDaOperacao());
 
+                Dictionary<DateTime, List<(bool, double)>> dic = lancamento.getDicionarioDaOperacao();
+                foreach(var d in dic)
+                {
+                    textBox_TESTE.Text = dic.Keys;
+                }
             }
             if (radioButton_Saque.Checked)
             {
@@ -51,6 +57,11 @@ namespace Banco
 
         private void textBox_Saldo_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void textBox_TESTE_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

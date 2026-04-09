@@ -8,7 +8,19 @@ namespace Banco
 {
     internal class Cadastro
     {
-        List<(bool operacao, double valor)> DictionaryValue;
-        Dictionary<DateTime, List<(bool, double)>> RegistroDeOperacao = new Dictionary<DateTime, List<(bool, double)>>();
+        List<Dictionary<DateTime, List<(bool, double)>>> LogsDeLancamentos;
+
+        public Cadastro()
+        {
+            LogsDeLancamentos = new List<Dictionary<DateTime, List<(bool, double)>>>();
+        }
+
+        public void CadastrarLog(Dictionary<DateTime, List<(bool, double)>> dic)
+        {
+            if(dic != null)
+            {
+                LogsDeLancamentos.Add(dic);
+            }
+        }
     }
 }

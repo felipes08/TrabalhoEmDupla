@@ -30,6 +30,7 @@
         {
             this.buttonExecutar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonExtrato = new System.Windows.Forms.Button();
             this.radioButton_Deposito = new System.Windows.Forms.RadioButton();
             this.radioButton_Saque = new System.Windows.Forms.RadioButton();
             this.TextBox_Valor = new System.Windows.Forms.TextBox();
@@ -38,7 +39,7 @@
             this.textBox_Saldo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonExtrato = new System.Windows.Forms.Button();
+            this.textBox_TESTE = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +69,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operação";
+            // 
+            // buttonExtrato
+            // 
+            this.buttonExtrato.Location = new System.Drawing.Point(22, 135);
+            this.buttonExtrato.Name = "buttonExtrato";
+            this.buttonExtrato.Size = new System.Drawing.Size(158, 23);
+            this.buttonExtrato.TabIndex = 5;
+            this.buttonExtrato.Text = "Mostrar Extrato";
+            this.buttonExtrato.UseVisualStyleBackColor = true;
             // 
             // radioButton_Deposito
             // 
@@ -115,7 +125,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(263, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(208, 144);
+            this.groupBox2.Size = new System.Drawing.Size(208, 177);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações";
@@ -141,27 +151,27 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 230);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 270);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 193);
             this.dataGridView1.TabIndex = 3;
             // 
-            // buttonExtrato
+            // textBox_TESTE
             // 
-            this.buttonExtrato.Location = new System.Drawing.Point(22, 135);
-            this.buttonExtrato.Name = "buttonExtrato";
-            this.buttonExtrato.Size = new System.Drawing.Size(158, 23);
-            this.buttonExtrato.TabIndex = 5;
-            this.buttonExtrato.Text = "Mostrar Extrato";
-            this.buttonExtrato.UseVisualStyleBackColor = true;
+            this.textBox_TESTE.Location = new System.Drawing.Point(106, 234);
+            this.textBox_TESTE.Name = "textBox_TESTE";
+            this.textBox_TESTE.Size = new System.Drawing.Size(100, 22);
+            this.textBox_TESTE.TabIndex = 4;
+            this.textBox_TESTE.TextChanged += new System.EventHandler(this.textBox_TESTE_TextChanged);
             // 
             // CaixaBanco01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 475);
+            this.Controls.Add(this.textBox_TESTE);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -176,6 +186,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,6 +203,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonExtrato;
+        private System.Windows.Forms.TextBox textBox_TESTE;
     }
 }
 
