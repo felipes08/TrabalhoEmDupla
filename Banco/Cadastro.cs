@@ -1,26 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Banco
 {
-    internal class Cadastro
+    public class Cadastro
     {
-        List<Dictionary<DateTime, List<(bool, double)>>> LogsDeLancamentos;
+        public Dictionary<DateTime, double> DicionarioLogsDeLancamentos {  get; set; }
 
         public Cadastro()
         {
-            LogsDeLancamentos = new List<Dictionary<DateTime, List<(bool, double)>>>();
+            DicionarioLogsDeLancamentos = new Dictionary<DateTime, double>();
         }
 
-        public void CadastrarLog(Dictionary<DateTime, List<(bool, double)>> dic)
+        public void CadastrarLog(Dictionary<DateTime, double> dic)
         {
-            if(dic != null)
+            foreach(KeyValuePair<DateTime,  double> kvp in dic)
             {
-                LogsDeLancamentos.Add(dic);
+                DicionarioLogsDeLancamentos.Add(kvp.Key, kvp.Value);
+
             }
+            
         }
+
+        
     }
 }

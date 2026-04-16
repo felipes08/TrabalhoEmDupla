@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    internal class ContaCorrente
+    public class ContaCorrente
     {
         double saldoAtual;
 

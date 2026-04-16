@@ -38,18 +38,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox_Saldo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox_TESTE = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonExecutar
             // 
-            this.buttonExecutar.Location = new System.Drawing.Point(22, 105);
+            this.buttonExecutar.Location = new System.Drawing.Point(68, 141);
             this.buttonExecutar.Name = "buttonExecutar";
-            this.buttonExecutar.Size = new System.Drawing.Size(158, 23);
+            this.buttonExecutar.Size = new System.Drawing.Size(173, 42);
             this.buttonExecutar.TabIndex = 0;
             this.buttonExecutar.Text = "Executar";
             this.buttonExecutar.UseVisualStyleBackColor = true;
@@ -63,28 +60,30 @@
             this.groupBox1.Controls.Add(this.TextBox_Valor);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.buttonExecutar);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(27, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(208, 177);
+            this.groupBox1.Size = new System.Drawing.Size(319, 250);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operação";
             // 
             // buttonExtrato
             // 
-            this.buttonExtrato.Location = new System.Drawing.Point(22, 135);
+            this.buttonExtrato.Location = new System.Drawing.Point(68, 189);
             this.buttonExtrato.Name = "buttonExtrato";
-            this.buttonExtrato.Size = new System.Drawing.Size(158, 23);
+            this.buttonExtrato.Size = new System.Drawing.Size(173, 42);
             this.buttonExtrato.TabIndex = 5;
             this.buttonExtrato.Text = "Mostrar Extrato";
             this.buttonExtrato.UseVisualStyleBackColor = true;
+            this.buttonExtrato.Click += new System.EventHandler(this.buttonExtrato_Click);
             // 
             // radioButton_Deposito
             // 
             this.radioButton_Deposito.AutoSize = true;
-            this.radioButton_Deposito.Location = new System.Drawing.Point(97, 66);
+            this.radioButton_Deposito.Location = new System.Drawing.Point(170, 100);
             this.radioButton_Deposito.Name = "radioButton_Deposito";
-            this.radioButton_Deposito.Size = new System.Drawing.Size(83, 20);
+            this.radioButton_Deposito.Size = new System.Drawing.Size(110, 29);
             this.radioButton_Deposito.TabIndex = 4;
             this.radioButton_Deposito.TabStop = true;
             this.radioButton_Deposito.Text = "Depósito";
@@ -94,9 +93,9 @@
             // radioButton_Saque
             // 
             this.radioButton_Saque.AutoSize = true;
-            this.radioButton_Saque.Location = new System.Drawing.Point(22, 66);
+            this.radioButton_Saque.Location = new System.Drawing.Point(52, 100);
             this.radioButton_Saque.Name = "radioButton_Saque";
-            this.radioButton_Saque.Size = new System.Drawing.Size(68, 20);
+            this.radioButton_Saque.Size = new System.Drawing.Size(91, 29);
             this.radioButton_Saque.TabIndex = 3;
             this.radioButton_Saque.TabStop = true;
             this.radioButton_Saque.Text = "Saque";
@@ -104,18 +103,18 @@
             // 
             // TextBox_Valor
             // 
-            this.TextBox_Valor.Location = new System.Drawing.Point(65, 22);
+            this.TextBox_Valor.Location = new System.Drawing.Point(112, 54);
             this.TextBox_Valor.Name = "TextBox_Valor";
-            this.TextBox_Valor.Size = new System.Drawing.Size(115, 22);
+            this.TextBox_Valor.Size = new System.Drawing.Size(168, 30);
             this.TextBox_Valor.TabIndex = 2;
             this.TextBox_Valor.TextChanged += new System.EventHandler(this.TextBox_Valor_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 25);
+            this.label1.Location = new System.Drawing.Point(47, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Valor:";
             // 
@@ -123,56 +122,38 @@
             // 
             this.groupBox2.Controls.Add(this.textBox_Saldo);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(263, 22);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(352, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(208, 177);
+            this.groupBox2.Size = new System.Drawing.Size(319, 250);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // textBox_Saldo
             // 
             this.textBox_Saldo.Enabled = false;
-            this.textBox_Saldo.Location = new System.Drawing.Point(81, 66);
+            this.textBox_Saldo.Location = new System.Drawing.Point(98, 122);
             this.textBox_Saldo.Name = "textBox_Saldo";
-            this.textBox_Saldo.Size = new System.Drawing.Size(100, 22);
+            this.textBox_Saldo.Size = new System.Drawing.Size(180, 30);
             this.textBox_Saldo.TabIndex = 1;
             this.textBox_Saldo.TextChanged += new System.EventHandler(this.textBox_Saldo_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 68);
+            this.label2.Location = new System.Drawing.Point(23, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Saldo:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 270);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 193);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // textBox_TESTE
-            // 
-            this.textBox_TESTE.Location = new System.Drawing.Point(106, 234);
-            this.textBox_TESTE.Name = "textBox_TESTE";
-            this.textBox_TESTE.Size = new System.Drawing.Size(100, 22);
-            this.textBox_TESTE.TabIndex = 4;
-            this.textBox_TESTE.TextChanged += new System.EventHandler(this.textBox_TESTE_TextChanged);
             // 
             // CaixaBanco01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 475);
-            this.Controls.Add(this.textBox_TESTE);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(700, 296);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -184,9 +165,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -201,9 +180,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox_Saldo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonExtrato;
-        private System.Windows.Forms.TextBox textBox_TESTE;
     }
 }
 

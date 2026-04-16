@@ -6,48 +6,21 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    internal class Lancamento
+    public class Lancamento
     {
-        DateTime data;
-        double valor;
-        bool operacao;
-        List<(bool op, double val)> DictionaryValue = new List<(bool op, double val)>();
-        Dictionary<DateTime, List<(bool, double)>> DicionarioDaOperacao = new Dictionary<DateTime, List<(bool, double)>>();
+        public DateTime Data { get; set; }
+        public double Valor { get; set; }
+        public string Operacao { get; set; }
+        public Dictionary<DateTime, double> DicionarioDoLancamento { get; set; }
 
-        public Lancamento(DateTime data, double valor, bool operacao)
+        public Lancamento(double valor, bool operacao)
         {
-            this.data = data;
-            this.valor = valor;
-            this.operacao = operacao;
+            Data = DateTime.Now;
+            Valor = (operacao) ? valor: (valor * -1);
+            Operacao = (operacao) ? "Depósito" : "Saque";
 
-            //criando a lista
-            
-
-            //adicionando a operacao e o valor na lista
-            DictionaryValue.Add((operacao, valor));
-
-            //adicionando a data como chave e a lista como valor
-            DicionarioDaOperacao.Add(data, DictionaryValue);
-        }
-
-        public DateTime getdata()
-        {
-            return data;
-        }
-
-        public double getvalor()
-        {
-            return valor;
-        }
-
-        public bool getoperacao()
-        {
-            return operacao;
-        }
-
-        public Dictionary<DateTime, List<(bool, double)>> getDicionarioDaOperacao()
-        {
-            return DicionarioDaOperacao;
+            DicionarioDoLancamento = new Dictionary<DateTime, double>();
+            DicionarioDoLancamento.Add(Data, Valor);
         }
     }
 }
