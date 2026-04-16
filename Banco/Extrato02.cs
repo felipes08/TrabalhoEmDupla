@@ -17,7 +17,6 @@ namespace Banco
         public Extrato02(Cadastro cadastro)
         {
             InitializeComponent();
-            //this.contaCorrente = contaCorrente;
             this.cadastro = cadastro;
 
             dataGridView_Extrato.Rows.Clear();

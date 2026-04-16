@@ -87,17 +87,6 @@ namespace Banco
         {
             Extrato02 extrato02 = new Extrato02(logsDeLancamentos);
             extrato02.ShowDialog();
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.Columns.Clear();
-            //dataGridView1.DataSource = null;
-            //dataGridView1.Columns.Add("colData", "Data");
-            //dataGridView1.Columns.Add("colOperacao", "Operação");
-            //dataGridView1.Columns.Add("colValor", "Valor");
-            
-            //foreach (KeyValuePair<DateTime, double> kvp in logsDeLancamentos.DicionarioLogsDeLancamentos)
-            //{ 
-            //    dataGridView1.Rows.Add(kvp.Key.ToString().Split(' ')[0], (kvp.Value < 0) ? "Saque" : "Depósito", kvp.Value.ToString("C2"));
-            //}
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
