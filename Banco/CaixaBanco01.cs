@@ -25,36 +25,52 @@ namespace Banco
         {
             if (radioButton_Deposito.Checked)
             {
-                status = ContaBancaria.deposito(double.Parse(TextBox_Valor.Text));
-                textBox_Saldo.Text = ContaBancaria.getSaldoAtual().ToString("C2");
-                
-                
-                if (!status)
+                if(double.TryParse(TextBox_Valor.Text, out double valor))
                 {
-                    MessageBox.Show("Não foi possível efetuar o depósito!\nVerifique se o valor do depósito é Valido. São perimitidos depósitos de, no mínimo, R$ 50,00.", "ERRO");
+                    status = ContaBancaria.deposito(valor);
+                    textBox_Saldo.Text = ContaBancaria.getSaldoAtual().ToString("C2");
+                
+                
+                    if (!status)
+                    {
+                        MessageBox.Show("Não foi possível efetuar o depósito!\nVerifique se o valor do depósito é Valido. São perimitidos depósitos de, no mínimo, R$ 50,00.", "ERRO");
+                    }
+                    else
+                    {
+                        Lancamento lancamento = new Lancamento(double.Parse(TextBox_Valor.Text), true);
+                        logsDeLancamentos.CadastrarLog(lancamento.DicionarioDoLancamento);
+                    }
                 }
                 else
                 {
-                    Lancamento lancamento = new Lancamento(double.Parse(TextBox_Valor.Text), true);
-                    logsDeLancamentos.CadastrarLog(lancamento.DicionarioDoLancamento);
+                    MessageBox.Show("Digite um valor válido!", "ERRO");
                 }
+                
                 radioButton_Deposito.Checked = false;
             }
             if (radioButton_Saque.Checked)
             {
-                status = ContaBancaria.saque(double.Parse(TextBox_Valor.Text));
-                textBox_Saldo.Text = ContaBancaria.getSaldoAtual().ToString("C2");
-
-
-                if (!status)
+                if(double.TryParse(TextBox_Valor.Text, out double valor))
                 {
-                    MessageBox.Show("Não foi possível efetuar o saque!\nVerifique se o valor do saque é Valido. São perimitidos saques com valor mínimo de R$ 10,00.\nVerifique se a conta possui saldo suficiente para efetuar o saque.", "ERRO");
+                    status = ContaBancaria.saque(valor);
+                    textBox_Saldo.Text = ContaBancaria.getSaldoAtual().ToString("C2");
+
+
+                    if (!status)
+                    {
+                        MessageBox.Show("Não foi possível efetuar o saque!\nVerifique se o valor do saque é Valido. São perimitidos saques com valor mínimo de R$ 10,00.\nVerifique se a conta possui saldo suficiente para efetuar o saque.", "ERRO");
+                    }
+                    else
+                    {
+                        Lancamento lancamento = new Lancamento(double.Parse(TextBox_Valor.Text), false);
+                        logsDeLancamentos.CadastrarLog(lancamento.DicionarioDoLancamento);
+                    }
                 }
                 else
                 {
-                    Lancamento lancamento = new Lancamento(double.Parse(TextBox_Valor.Text), false);
-                    logsDeLancamentos.CadastrarLog(lancamento.DicionarioDoLancamento);
+                    MessageBox.Show("Digite um valor válido!", "ERRO");
                 }
+                
                 radioButton_Saque.Checked = false;
                 
             }
